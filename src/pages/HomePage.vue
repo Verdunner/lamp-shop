@@ -20,12 +20,19 @@
 
     &__slider,
     &__categories {
-        max-width: 1440px;
         margin: 0 auto;
         padding: 2rem;
         border: 2px dashed #ccc;
         text-align: center;
-        background-color: #f9f9f9;
+        background-color: slategray;
+    }
+
+    &__slider {
+        width: 100vw;
+    }
+    &__categories {
+        width: 1440px;
+        height: 1440px;
     }
 }
 </style>

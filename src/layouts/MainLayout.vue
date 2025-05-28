@@ -22,7 +22,6 @@ import AppHeader from '@/components/AppHeader.vue';
 
     main {
         flex: 1;
-        padding: 2rem 1rem;
         margin-top: 200px;
     }
 }
