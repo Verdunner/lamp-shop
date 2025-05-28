@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import AppHeader from '@/components/AppHeader.vue';
+import AppHeader from '@/components/header/AppHeader.vue';
 // import Modal from '@/components/Modal.vue';
 </script>
 
