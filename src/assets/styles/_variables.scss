@@ -75,7 +75,7 @@ $font-family-default: sans-serif;
 * Layout
 */
 
-// $width-container: 1240px;
+$width-container: 1440px;
 
 // $gap-container: 20px;
 
@@ -130,5 +130,5 @@ $backdrop-filter-sidebar: blur(5px);
 */
 // $z-index-aside-substrate: 20;
 // $z-index-aside-block: 30;
-// $z-index-header: 50;
-// $z-index-sidebar: 70;
+$z-index-header: 50;
+$z-index-modal: 70;

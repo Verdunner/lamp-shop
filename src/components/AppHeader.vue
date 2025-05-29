@@ -2,7 +2,10 @@
     <header class="app-header">
         <HeaderTopbar />
         <HeaderMain @toggleCatalog="toggleCatalog" />
-        <HeaderTabs @toggleCategory="toggleCategory" />
+        <HeaderTabs
+            :current="currentCategory"
+            @toggleCategory="toggleCategory"
+        />
         <CatalogDropdown v-if="dropdownMode === 'catalog'" />
         <CategoryDropdown v-if="dropdownMode === 'category'" />
     </header>
@@ -17,14 +20,23 @@ import CatalogDropdown from './header/CatalogDropdown.vue';
 import CategoryDropdown from './header/CategoryDropdown.vue';
 
 const dropdownMode = ref<'default' | 'catalog' | 'category'>('default');
+const currentCategory = ref<number | null>(null);
 
 function toggleCatalog() {
+    currentCategory.value = null;
+
     dropdownMode.value =
         dropdownMode.value === 'catalog' ? 'default' : 'catalog';
 }
-function toggleCategory() {
-    dropdownMode.value =
-        dropdownMode.value === 'category' ? 'default' : 'category';
+function toggleCategory(id: number) {
+    if (currentCategory.value === id) {
+        currentCategory.value = null;
+        dropdownMode.value =
+            dropdownMode.value === 'category' ? 'default' : 'category';
+        return;
+    }
+    currentCategory.value = id;
+    dropdownMode.value = 'category';
 }
 </script>
 
@@ -34,7 +46,7 @@ function toggleCategory() {
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: #333;
-    z-index: 1000;
+    z-index: $z-index-header;
+    background-color: $white;
 }
 </style>

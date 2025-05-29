@@ -2,58 +2,52 @@
     <div class="topbar">
         <div class="topbar__container">
             <div class="topbar__left">
-                <div class="topbar__city">Тула</div>
+                <div class="topbar__city">
+                    <Link href="#" icon="fas fa-location-dot">Тула</Link>
+                </div>
                 <div class="topbar__links">
                     <ul class="topbar__links-list">
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Доставка и оплата
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Гарантия
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Возврат
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Отзывы
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Установка
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Дизайнерам
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Бренды
-                            </a>
-                        </li>
-                        <li class="topbar__links-item">
-                            <a class="topbar__link" href="#" target="_blank">
-                                Контакты
-                            </a>
+                        <li
+                            class="topbar__links-item"
+                            v-for="item in links"
+                            :key="item.text"
+                        >
+                            <Link :href="item.href">{{ item.text }}</Link>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="topbar__right">
-                <div class="topbar__auth">Войти</div>
+                <div class="topbar__auth">
+                    <Button
+                        @click="modalStore.openAuthModal"
+                        class="topbar__auth-btn"
+                        >Войти</Button
+                    >
+                </div>
             </div>
         </div>
     </div>
 </template>
+
+<script lang="ts" setup>
+import Link from '@/components/UI/Link.vue';
+import Button from '@/components/UI/Button.vue';
+
+import { useModalStore } from '@/stores/modal';
+const modalStore = useModalStore();
+
+const links = [
+    { href: '#', text: 'Доставка и оплата' },
+    { href: '#', text: 'Гарантия' },
+    { href: '#', text: 'Возврат' },
+    { href: '#', text: 'Отзывы' },
+    { href: '#', text: 'Установка' },
+    { href: '#', text: 'Дизайнерам' },
+    { href: '#', text: 'Бренды' },
+    { href: '#', text: 'Контакты' },
+];
+</script>
 
 <style scoped lang="scss">
 .topbar {
@@ -64,17 +58,18 @@
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0.5rem 1rem;
     color: $text-color;
     background-color: $geyser;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     &__container {
-        max-width: 1440px;
-        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        max-width: $width-container;
+        width: 100%;
+        height: 40px;
+        padding: 0 5px;
     }
 
     &__left {
@@ -88,19 +83,13 @@
     &__links {
         &-list {
             display: flex;
-            gap: 1rem;
             list-style: none;
             padding: 0;
             margin: 0;
         }
-    }
 
-    &__link {
-        color: $text-color;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
+        &-item:not(:last-child) {
+            margin-right: 50px;
         }
     }
 }

@@ -6,16 +6,10 @@
     user-select: none;
 
     ::-webkit-scrollbar {
-        width: 6px;
+        width: 8px;
     }
-    // ::-webkit-scrollbar-track {
-    //     background-color: $athens-gray;
-    //     border-right: 2px solid $white;
-    //     border-left: 2px solid $white;
-    // }
     ::-webkit-scrollbar-thumb {
-        // background-color: $curious-blue;
-        background-color: $white;
+        background-color: $calypso;
         border-radius: 10px;
     }
 
@@ -31,7 +25,13 @@ body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-    background-color: #242424;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 // html {

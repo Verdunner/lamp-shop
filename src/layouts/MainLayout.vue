@@ -4,13 +4,26 @@
         <main>
             <slot />
         </main>
-        <!-- <Modal /> -->
+        <Modal
+            v-if="modalStore.isAuthModalOpen"
+            @close="modalStore.closeAuthModal()"
+        />
     </div>
 </template>
 
 <script lang="ts" setup>
 import AppHeader from '@/components/AppHeader.vue';
-// import Modal from '@/components/Modal.vue';
+import Modal from '@/components/Modal.vue';
+import { watch } from 'vue';
+import { useModalStore } from '@/stores/modal';
+const modalStore = useModalStore();
+
+watch(
+    () => modalStore.isAuthModalOpen,
+    (isOpen) => {
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+);
 </script>
 
 <style scoped lang="scss">
@@ -18,11 +31,10 @@ import AppHeader from '@/components/AppHeader.vue';
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    border: 1px solid red;
 
     main {
         flex: 1;
-        margin-top: 200px;
+        margin-top: 182px;
     }
 }
 </style>

@@ -9,6 +9,7 @@
 <style scoped lang="scss">
 .modal-backdrop {
     position: fixed;
+    z-index: $z-index-modal;
     top: 0;
     left: 0;
     right: 0;
