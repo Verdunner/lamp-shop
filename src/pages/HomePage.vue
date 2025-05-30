@@ -22,7 +22,7 @@
         margin: 0 auto;
         padding: 2rem;
         text-align: center;
-        background-color: slategray;
+        background-color: $granny-smith;
     }
 
     &__slider {

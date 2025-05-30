@@ -26,7 +26,7 @@ defineEmits(['click']);
     font-size: 24px;
     color: $outer-space;
     background-color: transparent;
-    transition: background-color 0.2s;
+    transition: background-color $transition-duration;
 
     border: none;
     border-radius: 50%;

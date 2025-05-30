@@ -12,7 +12,11 @@
                 @click="$emit('toggleCatalog')"
                 class="header-main__catalog-btn"
             >
-                <i class="fas fa-bars header-main__catalog-btn-icon"></i>
+                <i
+                    v-if="isCatalogOpened"
+                    class="fas fa-xmark header-main__catalog-btn-icon"
+                ></i>
+                <i v-else class="fas fa-bars header-main__catalog-btn-icon"></i>
                 Каталог
             </Button>
             <div class="header-main__search">
@@ -61,6 +65,7 @@
 
 <script lang="ts" setup>
 import Button from '@/components/UI/Button.vue';
+defineProps<{ isCatalogOpened: boolean }>();
 defineEmits(['toggleCatalog']);
 </script>
 
@@ -90,6 +95,8 @@ defineEmits(['toggleCatalog']);
         font-size: 16px;
 
         &-icon::before {
+            display: block;
+            width: 22px;
             font-size: 25px;
             margin-right: 15px;
         }
@@ -105,9 +112,13 @@ defineEmits(['toggleCatalog']);
             width: 100%;
             height: 100%;
             padding: 0.5rem 2.5rem 0.5rem 1rem;
-            border-radius: 4px;
+            border-radius: $border-radius-medium;
             border: 1px solid #ccc;
             font-size: 16px;
+
+            &:focus {
+                outline: none;
+            }
         }
 
         &-icon {
@@ -182,10 +193,8 @@ defineEmits(['toggleCatalog']);
         color: $text-color;
         text-decoration: none;
 
-        background-color: $white;
-        border-radius: 8px;
-
-        transition: background-color 0.2s;
+        border-radius: $border-radius-medium;
+        transition: background-color $transition-duration;
 
         &:hover {
             background-color: $geyser;

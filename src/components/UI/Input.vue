@@ -36,6 +36,6 @@ const emitInput = (event: Event) => {
 
     font-size: 14px;
     background-color: $link-water;
-    border-radius: 5px;
+    border-radius: $border-radius-medium;
 }
 </style>

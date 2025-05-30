@@ -1,13 +1,20 @@
 <template>
     <header class="app-header">
         <HeaderTopbar />
-        <HeaderMain @toggleCatalog="toggleCatalog" />
+        <HeaderMain
+            :isCatalogOpened="dropdownMode === 'catalog'"
+            @toggleCatalog="toggleCatalog"
+        />
         <HeaderTabs
             :current="currentCategory"
             @toggleCategory="toggleCategory"
         />
-        <CatalogDropdown v-if="dropdownMode === 'catalog'" />
-        <CategoryDropdown v-if="dropdownMode === 'category'" />
+        <transition name="dropdown-slide" appear>
+            <CatalogDropdown v-if="dropdownMode === 'catalog'" />
+        </transition>
+        <transition name="dropdown-slide" appear>
+            <CategoryDropdown v-if="dropdownMode === 'category'" />
+        </transition>
     </header>
 </template>
 
@@ -45,8 +52,26 @@ function toggleCategory(id: number) {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     z-index: $z-index-header;
-    background-color: $white;
+
+    width: 100vw;
+    height: $height-header-desktop;
+    background-color: $background-color;
+}
+
+.dropdown-slide-enter-active,
+.dropdown-slide-leave-active {
+    transition: max-height $transition-duration $transition-function;
+    overflow: hidden;
+}
+
+.dropdown-slide-enter-from,
+.dropdown-slide-leave-to {
+    max-height: 0;
+}
+
+.dropdown-slide-enter-to,
+.dropdown-slide-leave-from {
+    max-height: 500px;
 }
 </style>

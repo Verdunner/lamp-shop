@@ -7,7 +7,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: $z-index-header;
+    z-index: $z-index-header-dropdown;
 
     display: flex;
     align-items: center;
@@ -16,6 +16,6 @@
     width: 100%;
     height: 300px;
     font-size: 24px;
-    background-color: $link-water;
+    background-color: $content-color;
 }
 </style>

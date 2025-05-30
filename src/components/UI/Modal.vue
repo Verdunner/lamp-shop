@@ -32,7 +32,7 @@ const modalStore = useModalStore();
     min-height: 200px;
     padding: 20px 20px 0;
 
-    background: $white;
-    border-radius: 10px;
+    background: $background-color;
+    border-radius: $border-radius-big;
 }
 </style>

@@ -116,7 +116,7 @@ const rememberMe = ref<boolean>(false);
 
     &__link {
         font-size: 12px;
-        color: $outer-space;
+        color: $link-color;
     }
 }
 </style>

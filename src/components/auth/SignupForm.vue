@@ -29,7 +29,7 @@
                     class="signup-form__input"
                 />
                 <Input
-                    v-model="phone"
+                    v-model="role"
                     placeholder="Пользователь"
                     class="signup-form__input"
                 />
@@ -40,7 +40,7 @@
                         class="signup-form__captcha-pic"
                     />
                     <Input
-                        v-model="names"
+                        v-model="captcha"
                         placeholder="Капча"
                         class="signup-form__input signup-form__captcha-input"
                     />

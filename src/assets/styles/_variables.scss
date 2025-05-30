@@ -1,7 +1,6 @@
 /**
 * Colors
 */
-
 $calypso: #2d7585;
 $sea-green: #2d8569;
 $swans-down: #e1f0ec;
@@ -17,118 +16,41 @@ $shamrock: #3cd978;
 $tulip-tree: #eac12f;
 
 $text-color: $outer-space;
-// $background-color: $alabaster;
-// $content-color: $white;
-// $link-color: $curious-blue;
-// $list-color: $cerise-red;
+$background-color: $white;
+$content-color: $link-water;
+$link-color: $outer-space;
+
 /**
 * Fonts
 */
-// $font-size-base: 16px;
-
-// $font-path: '/public/fonts';
-
 $font-family-custom: 'Inter';
 $font-family-default: sans-serif;
-
-// $font-family: $font-family-custom;
-
-// $font-weight-regular: 400;
-// $font-weight-medium: 500;
-// $font-weight-bold: 700;
-
-// $font-size-huge: 36px;
-// $font-size-large: 30px;
-// $font-size-medium: 24px;
-
-// $font-size-middle: 20px;
-// $font-size-smaller: 18px;
-// $font-size-small: 16px;
-
-// $font-size-tiny: 14px;
-// $font-size-miniature: 12px;
-// $font-size-mini: 10px;
-
-// $line-height-huge: 47px;
-// $line-height-big: 39px;
-// $line-height-large: 38px;
-
-// $line-height-medium: 29px;
-// $line-height-small: 26px;
-// $line-height-tiny: 24px;
-
-// $line-height-miniature: 19px;
-// $line-height-mini: 16px;
-
-// $letter-spacing: 0.14px;
-
-/**
-* Breakpoints
-*/
-// $screen-desktop: '(min-width: 1440px)';
-
-// $screen-tablet-oversize: '(min-width: 1280px)';
-
-// $screen-tablet: '(min-width: 768px)';
 
 /**
 * Layout
 */
-
 $width-container: 1440px;
-
-// $gap-container: 20px;
 
 /**
 * Sizes
 */
-// $height-header-mobile: 105px;
-// $height-header-desktop: 80px;
-
-// $height-footer-mobile: 275px;
-// $height-footer-desktop: 102px;
+$height-header-desktop: 182px;
 
 /**
 * Transitions and Animations
 */
-// $transition-duration: 300ms;
-// $transition-duration-fast: 100ms;
-// $transition-function: ease-in-out;
+$transition-duration: 400ms;
+$transition-function: ease-in-out;
 
 /**
 * Radius
 */
-// $border-radius: 8px;
-// $border-radius-medium: 5px;
-// $border-radius-mini: 2px;
-
-/**
-* Box-shadows
-*/
-// $box-shadow-header-footer: 0px rem(3px) rem(10px) rgba($black, .05);
-
-// $box-shadow-card: 0px rem(3px) rem(10px) 0px rgba($silver-chalice, .03),
-//                 0px rem(12px) rem(40px) 0px rgba($black, .03);
-
-// $box-shadow-card-strong: 0px 0px rem(10px) 0px rgba($silver-chalice, .03),
-//                         rem(-3px) 0px rem(40px) 0px rgba($black, .01);
-
-// // $box-shadow-double: 0px rem(12px) rem(40px) rgba($bunker, .03),
-// //                     0px rem(3px) rem(10px) rgba($silver-chalice, .03);
-
-// $box-shadow-cards: rem(-3px) 0px rem(40px) rgba($bunker, .01),
-//                     0px 0px rem(10px) rgba($silver-chalice, .03);
-
-// $drop-shadow-first: drop-shadow(0px rem(4px) rem(12px) rgba(38, 94, 107, 0.25));
-
-// $drop-shadow-second: drop-shadow(0px rem(4px) rem(12px) rgba(0, 0, 0, 0.1));
-
-$backdrop-filter-sidebar: blur(5px);
+$border-radius-medium: 5px;
+$border-radius-big: 10px;
 
 /**
 * Z-indexes
 */
-// $z-index-aside-substrate: 20;
-// $z-index-aside-block: 30;
 $z-index-header: 50;
+$z-index-header-dropdown: 40;
 $z-index-modal: 70;

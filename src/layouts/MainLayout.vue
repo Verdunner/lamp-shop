@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import AppHeader from '@/components/AppHeader.vue';
-import Modal from '@/components/Modal.vue';
+import Modal from '@/components/UI/Modal.vue';
 import LoginForm from '@/components/auth/LoginForm.vue';
 import SignupForm from '@/components/auth/SignupForm.vue';
 import { watch } from 'vue';
@@ -37,7 +37,7 @@ watch(
 
     main {
         flex: 1;
-        margin-top: 182px;
+        margin-top: $height-header-desktop;
     }
 }
 </style>

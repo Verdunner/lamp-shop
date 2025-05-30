@@ -27,9 +27,9 @@ const { class: _class, ...attrsWithoutClass } = attrs;
     height: 30px;
 
     border: none;
-    border-radius: 5px;
+    border-radius: $border-radius-medium;
     background-color: $calypso;
-    transition: background-color 0.4s;
+    transition: background-color $transition-duration;
     color: $white;
     font-size: 14px;
     cursor: pointer;

@@ -46,12 +46,11 @@ const categories = [
     display: flex;
     justify-content: center;
     height: 50px;
-    background-color: $white;
     border-top: 1px solid $geyser;
 
     &__list {
         display: flex;
-        width: 1440px;
+        width: $width-container;
         height: 100%;
     }
 
@@ -73,7 +72,7 @@ const categories = [
         background: none;
         border: none;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: background-color $transition-duration $transition-function;
 
         &:hover {
             background-color: $geyser;
