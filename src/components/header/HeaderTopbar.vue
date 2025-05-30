@@ -20,7 +20,7 @@
             <div class="topbar__right">
                 <div class="topbar__auth">
                     <Button
-                        @click="modalStore.openAuthModal"
+                        @click="modalStore.openAuthModal('login')"
                         class="topbar__auth-btn"
                         >Войти</Button
                     >

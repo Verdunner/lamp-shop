@@ -4,16 +4,18 @@
         <main>
             <slot />
         </main>
-        <Modal
-            v-if="modalStore.isAuthModalOpen"
-            @close="modalStore.closeAuthModal()"
-        />
+        <Modal v-if="modalStore.isAuthModalOpen">
+            <LoginForm v-if="modalStore.authMode === 'login'" />
+            <SignupForm v-else-if="modalStore.authMode === 'signup'" />
+        </Modal>
     </div>
 </template>
 
 <script lang="ts" setup>
 import AppHeader from '@/components/AppHeader.vue';
 import Modal from '@/components/Modal.vue';
+import LoginForm from '@/components/auth/LoginForm.vue';
+import SignupForm from '@/components/auth/SignupForm.vue';
 import { watch } from 'vue';
 import { useModalStore } from '@/stores/modal';
 const modalStore = useModalStore();
@@ -21,6 +23,7 @@ const modalStore = useModalStore();
 watch(
     () => modalStore.isAuthModalOpen,
     (isOpen) => {
+        document.documentElement.style.overflow = isOpen ? 'hidden' : '';
         document.body.style.overflow = isOpen ? 'hidden' : '';
     }
 );

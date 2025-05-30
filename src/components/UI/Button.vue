@@ -2,6 +2,7 @@
     <button
         class="ui-button"
         :class="$attrs.class"
+        v-bind="attrsWithoutClass"
         @click="$emit('click', $event)"
     >
         <slot />
@@ -9,8 +10,12 @@
 </template>
 
 <script lang="ts" setup>
+import { useAttrs } from 'vue';
 defineOptions({ inheritAttrs: false });
 defineEmits(['click']);
+
+const attrs = useAttrs();
+const { class: _class, ...attrsWithoutClass } = attrs;
 </script>
 
 <style scoped lang="scss">
@@ -24,6 +29,7 @@ defineEmits(['click']);
     border: none;
     border-radius: 5px;
     background-color: $calypso;
+    transition: background-color 0.4s;
     color: $white;
     font-size: 14px;
     cursor: pointer;

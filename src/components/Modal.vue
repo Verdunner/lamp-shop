@@ -1,28 +1,38 @@
 <template>
-    <div class="modal-backdrop">
+    <div class="modal-backdrop" @click.self="modalStore.closeAuthModal()">
         <div class="modal-content">
-            <p>MODAL STUB</p>
+            <slot />
         </div>
     </div>
 </template>
 
+<script lang="ts" setup>
+import { useModalStore } from '@/stores/modal';
+const modalStore = useModalStore();
+</script>
+
 <style scoped lang="scss">
 .modal-backdrop {
     position: fixed;
-    z-index: $z-index-modal;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: $z-index-modal;
+
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 170px;
+    background-color: rgba($outer-space, 0.7);
 }
 
 .modal-content {
-    background: grey;
-    padding: 2rem;
-    border-radius: 8px;
+    width: 465px;
+    min-height: 200px;
+    padding: 20px 20px 0;
+
+    background: $white;
+    border-radius: 10px;
 }
 </style>

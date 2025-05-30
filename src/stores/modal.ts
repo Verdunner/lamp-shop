@@ -3,8 +3,10 @@ import { ref } from 'vue';
 
 export const useModalStore = defineStore('modal', () => {
     const isAuthModalOpen = ref(false);
+    const authMode = ref<'login' | 'signup'>('login');
 
-    function openAuthModal() {
+    function openAuthModal(mode: 'login' | 'signup') {
+        authMode.value = mode;
         isAuthModalOpen.value = true;
     }
 
@@ -12,5 +14,5 @@ export const useModalStore = defineStore('modal', () => {
         isAuthModalOpen.value = false;
     }
 
-    return { isAuthModalOpen, openAuthModal, closeAuthModal };
+    return { isAuthModalOpen, authMode, openAuthModal, closeAuthModal };
 });
